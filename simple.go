@@ -23,13 +23,28 @@ func main(){
 	var current_position int
 	var current_char rune
 	for flag {
-		if input[0] == '+' {
-			fmt.Println("PLUS")
+		if input[0] == ';' {
+			fmt.Println("SEMICOLON")
 			input = input[1:]
-		} else if input[0] == '*' {
+		} else if input[0] == ',' {
+			fmt.Println("COMMA")
+			input = input[1:]
+		} else if input[0] == '.' {
+			fmt.Println("PERIOD")
+			input = input[1:]
+		}else if input[0] == '(' {
+			fmt.Println("LPAREN")
+			input = input[1:]
+		}else if input[0] == ')' {
+			fmt.Println("RPAREN")
+			input = input[1:]
+		}else if input[0] == '=' {
+			fmt.Println("ASSIGN")
+			input = input[1:]
+		}else if input[0] == '*' {
 			fmt.Println("TIMES")
 			input = input[1:]
-		} else if ws_regex.MatchString(input) {
+		}else if ws_regex.MatchString(input) {
 			input = input[1:]
 		} else if id_regex.MatchString(input){
 			current_position = 0
